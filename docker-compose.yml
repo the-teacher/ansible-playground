@@ -6,6 +6,6 @@ services:
   debian-server:
     image: iamteacher/ssh:arm64
     ports:
-      - 2022:22
+      - 2222:22
     tty: true
     command: bash
