@@ -26,3 +26,9 @@ docker run -ti -p 2022:22 iamteacher/ssh:arm64 bash
 ```sh
 ssh -i assets/ssh-key/id_rsa root@localhost -p 2022
 ```
+
+### How to Run with Docker Compose
+
+```sh
+docker compose -f docker-compose.yml up
+```
