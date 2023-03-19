@@ -23,9 +23,14 @@ ARG BUILDPLATFORM
 RUN echo "$BUILDPLATFORM" > /BUILDPLATFORM
 RUN echo "$TARGETARCH" > /TARGETARCH
 
+# For having SSH access
 RUN apt-get update && apt-get install -y \
   openssh-server \
   vim
+
+# For Ansible
+RUN apt-get update && apt-get install -y python3-pip
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 ADD assets/sshd_run.sh /root/sshd_run.sh
 RUN chmod +x /root/sshd_run.sh

@@ -14,3 +14,11 @@ ansible [core 2.14.3]
 ```
 ssh -i assets/ssh-key/id_rsa root@localhost -p 2222
 ```
+
+### Ping From Host
+
+```
+ansible all -i ansible/hosts -m ping
+
+ansible production -i ansible/hosts -m ping
+```
