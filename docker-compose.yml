@@ -3,9 +3,23 @@ version: '3.8'
 name: ansible-playground
 
 services:
-  debian-server:
+  debian-server-1:
     image: iamteacher/ssh:arm64
     ports:
-      - 2222:22
+      - 2201:22
+    tty: true
+    command: bash
+
+  debian-server-2:
+    image: iamteacher/ssh:arm64
+    ports:
+      - 2202:22
+    tty: true
+    command: bash
+
+  debian-server-3:
+    image: iamteacher/ssh:arm64
+    ports:
+      - 2203:22
     tty: true
     command: bash
