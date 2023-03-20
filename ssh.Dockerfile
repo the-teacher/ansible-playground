@@ -29,8 +29,12 @@ RUN apt-get update && apt-get install -y \
   vim
 
 # For Ansible
-RUN apt-get update && apt-get install -y python3-pip
-RUN ln -s /usr/bin/python3 /usr/bin/python
+RUN apt-get update && apt-get install -y python
+# RUN apt-get update && apt-get install -y python3-pip
+# RUN ln -s /usr/bin/python3 /usr/bin/python
+
+# SSHD setup
+# https://github.com/ansible/ansible/issues/22127#issuecomment-363719160
 
 ADD assets/sshd_run.sh /root/sshd_run.sh
 RUN chmod +x /root/sshd_run.sh
