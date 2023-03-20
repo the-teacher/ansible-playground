@@ -1,0 +1,9 @@
+- name: APT
+  hosts: all
+  tasks:
+    - name: APT | Update
+      tags: Update
+      become: yes
+      apt:
+        update_cache: true
+        cache_valid_time: 3600

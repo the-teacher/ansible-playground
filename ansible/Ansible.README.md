@@ -99,3 +99,13 @@ ansible-doc -l | grep ansible.builtin.apt
 
 ansible-doc ansible.builtin.apt
 ```
+
+### Run a Playbook
+
+```
+ansible-playbook playbooks/apt.yml
+
+ansible-playbook playbooks/nginx.yml
+
+ansible-playbook playbooks/nginx.yml --tags Install
+```
