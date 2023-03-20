@@ -23,3 +23,9 @@ ansible all -i hosts.ini -m ping
 ansible production -i hosts.ini -m ping
 ansible production -i hosts.yml -m ping
 ```
+
+### To See Full Inventory
+
+```
+ansible-inventory --list
+```
