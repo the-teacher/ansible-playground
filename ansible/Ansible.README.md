@@ -64,3 +64,9 @@ ansible production -m command -a "ls -al"
 - [Buildin Modules](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html)
 - [Shell](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html#ansible-collections-ansible-builtin-shell-module)
 - [Command](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/command_module.html#ansible-collections-ansible-builtin-command-module)
+
+### Copy a file
+
+```
+ansible production -m copy -a "src=ansible.cfg dest=/tmp mode=644" --become
+```
