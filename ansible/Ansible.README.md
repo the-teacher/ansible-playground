@@ -76,3 +76,15 @@ ansible production -m copy -a "src=ansible.cfg dest=/tmp mode=644" --become
 ```
 ansible production -m file -a "path=/tmp/ansible.cfg state=absent" --become
 ```
+
+### Download a file
+
+```
+ansible production -m get_url -a "url=https://rails-start.com dest=/tmp"
+```
+
+### Install a Debian Package
+
+```
+ansible production -m apt -a "name=nginx state=latest"
+```
