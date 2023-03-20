@@ -86,5 +86,16 @@ ansible production -m get_url -a "url=https://rails-start.com dest=/tmp"
 ### Install a Debian Package
 
 ```
-ansible production -m apt -a "name=nginx state=latest"
+ansible production -m apt -a "upgrade=yes update_cache=yes"
+
+ansible production -m apt -a "name=nginx update_cache=true state=latest"  --become
+```
+
+### Ansible Doc
+
+```
+ansible-doc -l | grep apt
+ansible-doc -l | grep ansible.builtin.apt
+
+ansible-doc ansible.builtin.apt
 ```
