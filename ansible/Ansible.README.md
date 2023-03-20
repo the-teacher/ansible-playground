@@ -29,3 +29,29 @@ ansible production -i hosts.yml -m ping
 ```
 ansible-inventory --list
 ```
+
+```
+$ ansible-inventory --graph
+
+@all:
+  |--@ungrouped:
+  |--@production:
+  |  |--server1
+```
+
+### Get Servers' Info
+
+```sh
+ansible production -m setup
+```
+
+
+```sh
+ansible production -m setup | grep ansible_os_family
+```
+
+### Perform a Command
+
+```
+ansible production -m shell -a "ls -al"
+```
