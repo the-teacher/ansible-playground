@@ -52,6 +52,15 @@ ansible production -m setup | grep ansible_os_family
 
 ### Perform a Command
 
+
 ```
 ansible production -m shell -a "ls -al"
+
+ansible production -m command -a "ls -al"
 ```
+
+### Ansible Modules
+
+- [Buildin Modules](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html)
+- [Shell](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html#ansible-collections-ansible-builtin-shell-module)
+- [Command](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/command_module.html#ansible-collections-ansible-builtin-command-module)
