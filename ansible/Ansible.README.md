@@ -65,8 +65,14 @@ ansible production -m command -a "ls -al"
 - [Shell](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html#ansible-collections-ansible-builtin-shell-module)
 - [Command](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/command_module.html#ansible-collections-ansible-builtin-command-module)
 
-### Copy a file
+### Copy a file from Host to Servers
 
 ```
 ansible production -m copy -a "src=ansible.cfg dest=/tmp mode=644" --become
+```
+
+### Remove files from Servers
+
+```
+ansible production -m file -a "path=/tmp/ansible.cfg state=absent" --become
 ```
