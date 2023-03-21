@@ -1,3 +1,4 @@
+# ansible-playbook playbooks/nginx.yml
 - name: NGINX
   hosts: all
   tasks:
@@ -7,3 +8,15 @@
       apt:
         name: nginx
         state: latest
+
+    - name: NGINX | Start
+      tags: Start
+      shell:
+        cmd: '/etc/init.d/nginx start'
+
+    # Docker does not have systemd
+    #
+    # - name: NGINX | Start
+    #   service:
+    #     name: nginx
+    #     state: started

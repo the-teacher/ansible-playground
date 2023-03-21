@@ -1,3 +1,4 @@
+# ansible-playbook playbooks/apt.yml
 - name: APT
   hosts: all
   tasks:
