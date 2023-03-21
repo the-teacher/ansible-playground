@@ -81,6 +81,7 @@ ansible production -m file -a "path=/tmp/ansible.cfg state=absent" --become
 
 ```
 ansible production -m get_url -a "url=https://rails-start.com dest=/tmp"
+ansible production -m url -a "url=https://rails-start.com return_content=yes"
 ```
 
 ### Install a Debian Package

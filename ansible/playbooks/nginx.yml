@@ -13,6 +13,7 @@
       tags: Start
       shell:
         cmd: '/etc/init.d/nginx start'
+      notify: NGINX | Hello Message
 
     # Docker does not have systemd
     #
@@ -20,3 +21,14 @@
     #   service:
     #     name: nginx
     #     state: started
+
+  handlers:
+    - name: NGINX | Hello Message
+      shell:
+        cmd: 'ls -al .'
+      register: output
+      notify: NGINX | Debug
+
+    - name: NGINX | Debug
+      debug:
+        msg: "{{ output.stdout_lines }}"

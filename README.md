@@ -30,5 +30,5 @@ ssh -i assets/ssh-key/id_rsa root@localhost -p 2022
 ### How to Run with Docker Compose
 
 ```sh
-docker compose -f docker-compose.yml up
+docker compose -f docker/docker-compose.yml up
 ```
